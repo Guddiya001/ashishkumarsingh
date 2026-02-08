@@ -1,51 +1,25 @@
 import CaseStudyLayout from "./CaseStudyLayout";
+import { useTranslation } from 'react-i18next';
 
 export default function DocumentIntelligence() {
+  const { t } = useTranslation();
+
   return (
     <CaseStudyLayout
-      title="AI Document Intelligence & Automation Platform"
-      subtitle="GenAI-powered document processing using RAG and LLMs"
+      title={t('caseStudies.documentIntelligence.title')}
+      subtitle={t('caseStudies.documentIntelligence.subtitle')}
 
-      problem={[
-        "Manual processing of large volumes of structured and unstructured documents",
-        "OCR-based systems failed to understand context and long documents",
-        "High turnaround time and operational bottlenecks",
-      ]}
+      problem={t('caseStudies.documentIntelligence.problem', { returnObjects: true })}
 
-      solution={[
-        "Designed a GenAI-powered document intelligence platform",
-        "Implemented Retrieval-Augmented Generation (RAG) pipelines",
-        "Added human-in-the-loop validation workflows",
-      ]}
+      solution={t('caseStudies.documentIntelligence.solution', { returnObjects: true })}
 
-      architecture={[
-        "LLMs: OpenAI GPT models",
-        "GenAI Framework: LangChain",
-        "Backend: Python, Node.js",
-        "Vector Databases: FAISS / Pinecone",
-        "Caching: Redis",
-        "Frontend: React",
-        "Cloud: AWS (Docker, Kubernetes, CI/CD)",
-      ]}
+      architecture={t('caseStudies.documentIntelligence.architecture', { returnObjects: true })}
 
-      decisions={[
-        "Semantic chunking to preserve document context",
-        "Batch inference and caching to reduce LLM costs",
-        "Token optimization for long-document summarization",
-        "Fallback strategies for low-confidence retrieval",
-      ]}
+      decisions={t('caseStudies.documentIntelligence.decisions', { returnObjects: true })}
 
-      impact={[
-        "45–55% improvement in document processing efficiency",
-        "Reduced manual review time significantly",
-        "Production-ready, cost-efficient GenAI deployment",
-      ]}
+      impact={t('caseStudies.documentIntelligence.impact', { returnObjects: true })}
 
-      learnings={[
-        "End-to-end GenAI system design",
-        "Cost–latency–accuracy trade-offs in production",
-        "Scalable RAG architecture for enterprises",
-      ]}
+      learnings={t('caseStudies.documentIntelligence.learnings', { returnObjects: true })}
     />
   );
 }

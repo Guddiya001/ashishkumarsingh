@@ -1,9 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="hero">
       <div className="hero-content">
         <div className="hero-text">
-          <h1>Ashish Kumar Singh</h1>
+          <h1>{t('hero.greeting')} Ashish Kumar Singh</h1>
         <div className="hero-image">
           <img src="profile.jpg" alt="Ashish Kumar Singh" width="200" height="200" />
         </div>
@@ -11,13 +15,12 @@ export default function Hero() {
             Senior Full-Stack & GenAI Engineer
           </h2>
           <p>
-            Building scalable AI-powered platforms with React, Node.js, Python,
-            LLMs, RAG, and AWS.
+            {t('hero.description')}
           </p>
 
           <div className="hero-actions" style={{ paddingTop: '20px' }}>
-            <a href="#projects" className="btn-primary">View Projects</a>
-            <a href="/resume.pdf" className="btn-outline">Download Resume</a>
+            <a href="#projects" className="btn-primary">{t('hero.viewProjects')}</a>
+            <a href="/resume.pdf" className="btn-outline">{t('hero.downloadResume')}</a>
           </div>
         </div>
       </div>

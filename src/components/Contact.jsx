@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,12 +41,12 @@ const Contact = () => {
 
   return (
     <section id="contact">
-      <h2>Contact Me</h2>
+      <h2>{t('contact.title')}</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
-          placeholder="Your Name"
+          placeholder={t('contact.namePlaceholder')}
           value={formData.name}
           onChange={handleChange}
           required
@@ -52,19 +54,19 @@ const Contact = () => {
         <input
           type="email"
           name="email"
-          placeholder="Your Email"
+          placeholder={t('contact.emailPlaceholder')}
           value={formData.email}
           onChange={handleChange}
           required
         />
         <textarea
           name="message"
-          placeholder="Your Message"
+          placeholder={t('contact.messagePlaceholder')}
           value={formData.message}
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit">Send Message</button>
+        <button type="submit">{t('contact.sendMessage')}</button>
       </form>
     </section>
   );

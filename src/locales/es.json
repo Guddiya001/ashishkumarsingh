@@ -1,0 +1,255 @@
+{
+  "name": "ASHISH SINGH",
+  "title": "Ingeniero de Software Senior | Especialista en GenAI y Frontend",
+  "home": "Inicio",
+  "case_Studies": "Estudios de Caso",
+  "lightMode": "Modo Claro",
+  "darkMode": "Modo Oscuro",
+  "hero": {
+    "greeting": "Hola, soy",
+    "description": "Construyendo plataformas escalables impulsadas por IA con React, Node.js, Python, LLMs, RAG y AWS.",
+    "viewProjects": "Ver Proyectos",
+    "downloadResume": "Descargar Currículum"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "content1": "Ingeniero Full-Stack Senior y GenAI con más de 9 años de experiencia construyendo y escalando plataformas web de nivel empresarial y sistemas habilitados para IA en FinTech, Salud y Comercio Electrónico.",
+    "content2": "Mi experiencia abarca LLMs, arquitecturas RAG y LangChain, junto con desarrollo nativo en la nube moderno usando Python, Node.js, React y AWS. He contribuido y liderado la entrega de soluciones críticas para empresas globales como DBS Bank, Walmart y UnitedHealth Group, colaborando con equipos distribuidos en regiones."
+  },
+  "skills": {
+    "title": "Habilidades",
+    "genai": "GenAI e IA",
+    "genaiDesc": "LLMs, RAG, LangChain, OpenAI, Bases de Datos Vectoriales",
+    "backend": "Backend",
+    "backendDesc": "Python, FastAPI, Node.js, Kafka, Integración de API",
+    "frontend": "Frontend",
+    "frontendDesc": "React, Next.js, JavaScript, TypeScript, HTML, CSS, Tailwind CSS, Diseño Responsivo, Accesibilidad (WCAG), Arquitectura Frontend, Diseño de Componentes, Sistemas UI Escalables",
+    "cloud": "Nube y DevOps",
+    "cloudDesc": "AWS, Docker, Kubernetes, CI/CD",
+    "enterprise": "Entrega Empresarial",
+    "enterpriseDesc": "Desarrollo Orientado al Cliente, Colaboración con Interesados, Mantenibilidad a Largo Plazo",
+    "leadership": "Liderazgo",
+    "leadershipDesc": "Mentoría, Coaching, Guía Técnica, Revisiones de Código"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "item1": {
+      "title": "Plataforma de Inteligencia de Documentos AI",
+      "description": "Extracción, resumen y clasificación de documentos impulsados por GenAI utilizando pipelines RAG.",
+      "impact": "Mejoró la eficiencia de procesamiento en un 45-55%",
+      "tech": "LLMs, RAG, Python, Node.js, AWS"
+    },
+    "item2": {
+      "title": "Asistente de Conocimiento Empresarial",
+      "description": "Asistente basado en LLM para búsqueda de conocimiento empresarial utilizando bases de datos vectoriales.",
+      "impact": "Redujo el tiempo de búsqueda manual en un 60%",
+      "tech": "LangChain, FastAPI, FAISS, AWS"
+    },
+    "item3": {
+      "title": "Sistema de Automatización Conversacional",
+      "description": "Chatbot impulsado por LLM para soporte al cliente y automatización de flujos de trabajo.",
+      "impact": "Tasa de resolución automática del 70%+",
+      "tech": "LLMs, Kafka, AWS"
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "item1": {
+      "title": "Líder de Ingeniería Senior",
+      "company": "Persistent Systems · UnitedHealth Group (Cliente)",
+      "location": "Noida, India",
+      "duration": "Oct 2023 – Presente",
+      "points": [
+        "Líder Técnico Senior de Frontend y GenAI para plataformas de atención médica empresarial",
+        "Arquitecté sistemas frontend habilitados para IA utilizando React, Next.js y TypeScript",
+        "Integré servicios impulsados por LLM, pipelines RAG y flujos de trabajo impulsados por IA",
+        "Colaboré con equipos de IA, backend y plataforma en orquestación GenAI",
+        "Mentoré a ingenieros en arquitectura escalable y diseño de UI consciente de IA",
+        "Contribuyó a una reducción del 42% en el tiempo de resolución de incidentes"
+      ]
+    },
+    "item2": {
+      "title": "Ingeniero de Software Senior",
+      "company": "DBS Bank",
+      "location": "Singapur",
+      "duration": "Jul 2022 – Mar 2023",
+      "points": [
+        "Construí aplicaciones frontend críticas para la misión utilizando React y Next.js",
+        "Integré flujos de trabajo asistidos por IA en plataformas bancarias empresariales",
+        "Optimizé el rendimiento SSR para apoyar a más de 2M de usuarios mensuales",
+        "Aseguré la mantenibilidad a largo plazo a través de prácticas sólidas de TypeScript y pruebas"
+      ]
+    },
+    "item3": {
+      "title": "Ingeniero de Software Senior",
+      "company": "Coforge Ltd · Walmart (Cliente)",
+      "location": "Noida, India",
+      "duration": "Oct 2020 – Jun 2022",
+      "points": [
+        "Lideré la modernización frontend para plataformas de comercio electrónico globales",
+        "Construí dashboards intensivos en datos procesando 500k+ transacciones diarias",
+        "Trabajé en sistemas impulsados por API y casos de uso de automatización",
+        "Aplicé principios de accesibilidad, rendimiento y diseño escalable"
+      ]
+    },
+    "item4": {
+      "title": "Ingeniero de Software",
+      "company": "Peerxp Info Technologies",
+      "location": "Gurgaon, India",
+      "duration": "Ene 2019 – Oct 2020",
+      "points": [
+        "Desarrollé características de productos basados en React en un entorno de ritmo rápido",
+        "Construí componentes UI reutilizables y mentoré a ingenieros junior"
+      ]
+    },
+    "item5": {
+      "title": "Ingeniero de Software",
+      "company": "Advance Research & Web Development (ARWD)",
+      "location": "Delhi, India",
+      "duration": "Ene 2016 – Ene 2019",
+      "points": [
+        "Desarrollé interfaces web responsivas con fundamentos sólidos de UX",
+        "Trabajé directamente con clientes para entregar soluciones UI alineadas con el negocio"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "namePlaceholder": "Tu Nombre",
+    "emailPlaceholder": "Tu Correo Electrónico",
+    "messagePlaceholder": "Tu Mensaje",
+    "sendMessage": "Enviar Mensaje"
+  },
+  "caseStudies": {
+    "title": "Estudios de Caso GenAI",
+    "documentIntelligence": {
+      "title": "Plataforma de Inteligencia y Automatización de Documentos AI",
+      "subtitle": "Procesamiento de documentos impulsado por GenAI usando RAG y LLMs",
+      "problem": [
+        "Procesamiento manual de grandes volúmenes de documentos estructurados y no estructurados",
+        "Los sistemas basados en OCR fallaron en entender el contexto y documentos largos",
+        "Alto tiempo de respuesta y cuellos de botella operativos"
+      ],
+      "solution": [
+        "Diseñé una plataforma de inteligencia de documentos impulsada por GenAI",
+        "Implementé pipelines de Generación Aumentada por Recuperación (RAG)",
+        "Agregué flujos de trabajo de validación humana en el bucle"
+      ],
+      "architecture": [
+        "LLMs: Modelos GPT de OpenAI",
+        "Marco GenAI: LangChain",
+        "Backend: Python, Node.js",
+        "Bases de Datos Vectoriales: FAISS / Pinecone",
+        "Caché: Redis",
+        "Frontend: React",
+        "Nube: AWS (Docker, Kubernetes, CI/CD)"
+      ],
+      "decisions": [
+        "Fragmentación semántica para preservar el contexto del documento",
+        "Inferencia por lotes y caché para reducir costos de LLM",
+        "Optimización de tokens para resumen de documentos largos",
+        "Estrategias de respaldo para recuperación de baja confianza"
+      ],
+      "impact": [
+        "45-55% de mejora en la eficiencia de procesamiento de documentos",
+        "Redujo significativamente el tiempo de revisión manual",
+        "Despliegue GenAI listo para producción, eficiente en costos"
+      ],
+      "learnings": [
+        "Diseño de sistema GenAI de extremo a extremo",
+        "Compromisos costo-latencia-precisión en producción",
+        "Arquitectura RAG escalable para empresas"
+      ]
+    },
+    "knowledgeAssistant": {
+      "title": "Asistente de Conocimiento Empresarial (GenAI + RAG)",
+      "subtitle": "Asistente basado en LLM para descubrimiento de conocimiento empresarial",
+      "problem": [
+        "Conocimiento disperso en múltiples herramientas",
+        "La búsqueda manual ralentizó la incorporación y productividad",
+        "Alta dependencia del conocimiento tribal"
+      ],
+      "solution": [
+        "Construí un asistente de conocimiento GenAI de grado producción",
+        "Implementé ingestión de documentos y búsqueda semántica",
+        "Habilitó Q&A en lenguaje natural sobre datos empresariales"
+      ],
+      "architecture": [
+        "LLMs: OpenAI",
+        "Marco RAG: LangChain",
+        "Backend: Python, FastAPI",
+        "Bases de Datos Vectoriales: FAISS / Pinecone",
+        "Nube: AWS (Docker, Kubernetes, CI/CD)",
+        "Seguridad: APIs autenticadas y monitoreo"
+      ],
+      "decisions": [
+        "Recuperación de múltiples etapas (semántica + ranking)",
+        "Anclaje de prompts para reducir alucinaciones",
+        "Respuestas de respaldo basadas en confianza",
+        "Pipelines continuos de ingestión de documentos"
+      ],
+      "impact": [
+        "~60% de reducción en el tiempo de búsqueda manual de conocimiento",
+        "Mejoró la velocidad de incorporación",
+        "Mayor confianza en respuestas generadas por IA"
+      ],
+      "learnings": [
+        "Arquitectura RAG de grado empresarial",
+        "Estrategias de mitigación de alucinaciones",
+        "Despliegue seguro de sistemas de IA"
+      ]
+    },
+    "conversationalAutomation": {
+      "title": "Sistema de Automatización Conversacional Basado en LLM",
+      "subtitle": "IA conversacional escalable para soporte y flujos de trabajo",
+      "problem": [
+        "Consultas repetitivas de clientes y flujos de trabajo internos",
+        "Los bots basados en reglas carecían de flexibilidad",
+        "Alta carga en agentes humanos"
+      ],
+      "solution": [
+        "Diseñé un sistema conversacional impulsado por LLM",
+        "Habilitó conversaciones conscientes del contexto de múltiples turnos",
+        "Automatizó la ejecución de flujos de trabajo vía llamadas a herramientas"
+      ],
+      "architecture": [
+        "LLMs: OpenAI",
+        "Marco GenAI: LangChain",
+        "Backend: Python, FastAPI",
+        "Transmisión de Eventos: Kafka",
+        "Nube: AWS (API Gateway, Autoscaling, IAM)"
+      ],
+      "decisions": [
+        "Memoria de conversación y gestión de estado",
+        "Llamadas dinámicas a herramientas/funciones",
+        "Arquitectura impulsada por eventos usando Kafka",
+        "Control de acceso basado en roles para seguridad"
+      ],
+      "impact": [
+        "70%+ tasa de resolución automática de consultas",
+        "Redujo significativamente la carga de soporte",
+        "Mejoró el tiempo de respuesta y satisfacción"
+      ],
+      "learnings": [
+        "IA conversacional a escala",
+        "Sistemas GenAI impulsados por eventos",
+        "Despliegue seguro y confiable en la nube"
+      ]
+    }
+  },
+  "caseStudy": {
+    "problem": "Problema",
+    "solution": "Solución",
+    "architecture": "Arquitectura y Pila Tecnológica",
+    "decisions": "Decisiones Técnicas Clave",
+    "impact": "Impacto",
+    "learnings": "Lo Que Esto Demuestra"
+  },
+  "footer": {
+    "visaText": "Abierto a Patrocinio de Visa y Reubicación Global",
+    "email": "Correo Electrónico",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2026 ASHISH SINGH. Todos los derechos reservados."
+  }
+}

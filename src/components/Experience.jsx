@@ -1,73 +1,61 @@
+import { useTranslation } from 'react-i18next';
+
 export default function Experience() {
+  const { t } = useTranslation();
+
+  const experiences = [
+    {
+      title: t('experience.item1.title'),
+      company: t('experience.item1.company'),
+      location: t('experience.item1.location'),
+      duration: t('experience.item1.duration'),
+      points: t('experience.item1.points', { returnObjects: true })
+    },
+    {
+      title: t('experience.item2.title'),
+      company: t('experience.item2.company'),
+      location: t('experience.item2.location'),
+      duration: t('experience.item2.duration'),
+      points: t('experience.item2.points', { returnObjects: true })
+    },
+    {
+      title: t('experience.item3.title'),
+      company: t('experience.item3.company'),
+      location: t('experience.item3.location'),
+      duration: t('experience.item3.duration'),
+      points: t('experience.item3.points', { returnObjects: true })
+    },
+    {
+      title: t('experience.item4.title'),
+      company: t('experience.item4.company'),
+      location: t('experience.item4.location'),
+      duration: t('experience.item4.duration'),
+      points: t('experience.item4.points', { returnObjects: true })
+    },
+    {
+      title: t('experience.item5.title'),
+      company: t('experience.item5.company'),
+      location: t('experience.item5.location'),
+      duration: t('experience.item5.duration'),
+      points: t('experience.item5.points', { returnObjects: true })
+    }
+  ];
+
   return (
     <section id="experience">
-      <h2>Work Experience</h2>
+      <h2>{t('experience.title')}</h2>
 
       <div className="experience-list">
-
-        <ExperienceItem
-          title="Senior Engineering Lead"
-          company="Persistent Systems · UnitedHealth Group (Client)"
-          location="Noida, India"
-          duration="Oct 2023 – Present"
-          points={[
-            "Senior Frontend & GenAI Technical Lead for enterprise healthcare platforms",
-            "Architected AI-enabled frontend systems using React, Next.js, and TypeScript",
-            "Integrated LLM-powered services, RAG pipelines, and AI-driven workflows",
-            "Collaborated with AI, backend, and platform teams on GenAI orchestration",
-            "Mentored engineers on scalable architecture and AI-aware UI design",
-            "Contributed to a 42% reduction in incident resolution time"
-          ]}
-        />
-
-        <ExperienceItem
-          title="Senior Software Engineer"
-          company="DBS Bank"
-          location="Singapore"
-          duration="Jul 2022 – Mar 2023"
-          points={[
-            "Built mission-critical frontend applications using React and Next.js",
-            "Integrated AI-assisted workflows into enterprise banking platforms",
-            "Optimized SSR performance to support 2M+ monthly users",
-            "Ensured long-term maintainability through strong TypeScript and testing practices"
-          ]}
-        />
-
-        <ExperienceItem
-          title="Senior Software Engineer"
-          company="Coforge Ltd · Walmart (Client)"
-          location="Noida, India"
-          duration="Oct 2020 – Jun 2022"
-          points={[
-            "Led frontend modernization for global e-commerce platforms",
-            "Built data-intensive dashboards processing 500k+ daily transactions",
-            "Worked on API-driven systems and automation use cases",
-            "Applied accessibility, performance, and scalable design principles"
-          ]}
-        />
-
-        <ExperienceItem
-          title="Software Engineer"
-          company="Peerxp Info Technologies"
-          location="Gurgaon, India"
-          duration="Jan 2019 – Oct 2020"
-          points={[
-            "Developed React-based product features in a fast-paced environment",
-            "Built reusable UI components and mentored junior engineers"
-          ]}
-        />
-
-        <ExperienceItem
-          title="Software Engineer"
-          company="Advance Research & Web Development (ARWD)"
-          location="Delhi, India"
-          duration="Jan 2016 – Jan 2019"
-          points={[
-            "Developed responsive web interfaces with strong UX fundamentals",
-            "Worked directly with clients to deliver business-aligned UI solutions"
-          ]}
-        />
-
+        {experiences.map((exp, i) => (
+          <ExperienceItem
+            key={i}
+            title={exp.title}
+            company={exp.company}
+            location={exp.location}
+            duration={exp.duration}
+            points={exp.points}
+          />
+        ))}
       </div>
     </section>
   );

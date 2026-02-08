@@ -1,49 +1,25 @@
 import CaseStudyLayout from "./CaseStudyLayout";
+import { useTranslation } from 'react-i18next';
 
 export default function ConversationalAutomation() {
+  const { t } = useTranslation();
+
   return (
     <CaseStudyLayout
-      title="LLM-Based Conversational Automation System"
-      subtitle="Scalable conversational AI for support and workflows"
+      title={t('caseStudies.conversationalAutomation.title')}
+      subtitle={t('caseStudies.conversationalAutomation.subtitle')}
 
-      problem={[
-        "Repetitive customer and internal workflow queries",
-        "Rule-based bots lacked flexibility",
-        "High load on human agents",
-      ]}
+      problem={t('caseStudies.conversationalAutomation.problem', { returnObjects: true })}
 
-      solution={[
-        "Designed an LLM-powered conversational system",
-        "Enabled multi-turn context-aware conversations",
-        "Automated workflow execution via tool calling",
-      ]}
+      solution={t('caseStudies.conversationalAutomation.solution', { returnObjects: true })}
 
-      architecture={[
-        "LLMs: OpenAI",
-        "GenAI Framework: LangChain",
-        "Backend: Python, FastAPI",
-        "Event Streaming: Kafka",
-        "Cloud: AWS (API Gateway, Autoscaling, IAM)",
-      ]}
+      architecture={t('caseStudies.conversationalAutomation.architecture', { returnObjects: true })}
 
-      decisions={[
-        "Conversation memory and state management",
-        "Dynamic tool/function calling",
-        "Event-driven architecture using Kafka",
-        "Role-based access control for security",
-      ]}
+      decisions={t('caseStudies.conversationalAutomation.decisions', { returnObjects: true })}
 
-      impact={[
-        "70%+ query auto-resolution rate",
-        "Reduced support workload significantly",
-        "Improved response time and satisfaction",
-      ]}
+      impact={t('caseStudies.conversationalAutomation.impact', { returnObjects: true })}
 
-      learnings={[
-        "Conversational AI at scale",
-        "Event-driven GenAI systems",
-        "Secure and reliable cloud deployment",
-      ]}
+      learnings={t('caseStudies.conversationalAutomation.learnings', { returnObjects: true })}
     />
   );
 }

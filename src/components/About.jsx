@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export default function About() {
+  const { t } = useTranslation();
   return (
     <motion.section
       id="about"
@@ -15,7 +17,7 @@ export default function About() {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        About Me
+        {t('about.title')}
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 30 }}
@@ -23,9 +25,7 @@ export default function About() {
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
-       Senior Full-Stack &amp; GenAI Engineer with <strong>9+ years of experience</strong>
-    building and scaling <strong>enterprise-grade web platforms and AI-enabled systems</strong>
-    across <strong>FinTech, Healthcare, and E-Commerce</strong>.
+        {t('about.content1')}
       </motion.p>
       <motion.p
         initial={{ opacity: 0, y: 30 }}
@@ -33,14 +33,7 @@ export default function About() {
         transition={{ duration: 0.6, delay: 0.6 }}
         viewport={{ once: true }}
       >
-           My expertise spans <strong>LLMs</strong>, <strong>RAG architectures</strong>, and
-          <strong>LangChain</strong>, alongside modern cloud-native development using
-          <strong>Python</strong>, <strong>Node.js</strong>, <strong>React</strong>, and
-          <strong>AWS</strong>. I have contributed to and led the delivery of
-          <strong>mission-critical solutions</strong> for global enterprises such as
-          <strong>DBS Bank</strong>, <strong>Walmart</strong>, and
-          <strong>UnitedHealth Group</strong>, collaborating with distributed teams
-          across regions.
+        {t('about.content2')}
       </motion.p>
     </motion.section>
   );

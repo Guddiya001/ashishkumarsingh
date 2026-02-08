@@ -1,50 +1,25 @@
 import CaseStudyLayout from "./CaseStudyLayout";
+import { useTranslation } from 'react-i18next';
 
 export default function KnowledgeAssistant() {
+  const { t } = useTranslation();
+
   return (
     <CaseStudyLayout
-      title="Enterprise Knowledge Assistant (GenAI + RAG)"
-      subtitle="LLM-based assistant for enterprise knowledge discovery"
+      title={t('caseStudies.knowledgeAssistant.title')}
+      subtitle={t('caseStudies.knowledgeAssistant.subtitle')}
 
-      problem={[
-        "Knowledge scattered across multiple tools",
-        "Manual lookup slowed onboarding and productivity",
-        "High dependency on tribal knowledge",
-      ]}
+      problem={t('caseStudies.knowledgeAssistant.problem', { returnObjects: true })}
 
-      solution={[
-        "Built a production-grade GenAI knowledge assistant",
-        "Implemented document ingestion and semantic search",
-        "Enabled natural language Q&A over enterprise data",
-      ]}
+      solution={t('caseStudies.knowledgeAssistant.solution', { returnObjects: true })}
 
-      architecture={[
-        "LLMs: OpenAI",
-        "RAG Framework: LangChain",
-        "Backend: Python, FastAPI",
-        "Vector Databases: FAISS / Pinecone",
-        "Cloud: AWS (Docker, Kubernetes, CI/CD)",
-        "Security: Authenticated APIs and monitoring",
-      ]}
+      architecture={t('caseStudies.knowledgeAssistant.architecture', { returnObjects: true })}
 
-      decisions={[
-        "Multi-stage retrieval (semantic + ranking)",
-        "Prompt grounding to reduce hallucinations",
-        "Confidence-based fallback responses",
-        "Continuous document ingestion pipelines",
-      ]}
+      decisions={t('caseStudies.knowledgeAssistant.decisions', { returnObjects: true })}
 
-      impact={[
-        "~60% reduction in manual knowledge lookup time",
-        "Improved onboarding speed",
-        "Higher trust in AI-generated answers",
-      ]}
+      impact={t('caseStudies.knowledgeAssistant.impact', { returnObjects: true })}
 
-      learnings={[
-        "Enterprise-grade RAG architecture",
-        "Hallucination mitigation strategies",
-        "Secure AI system deployment",
-      ]}
+      learnings={t('caseStudies.knowledgeAssistant.learnings', { returnObjects: true })}
     />
   );
 }
