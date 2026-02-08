@@ -2,7 +2,8 @@ import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import { defineConfig } from 'eslint'
+import pkg from 'eslint'
+const { defineConfig } = pkg
 
 export default defineConfig([
   {
