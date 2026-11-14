@@ -2,6 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const path = require('path');
+
+// Automatically load root .env file in Node 20+
+try {
+  if (process.loadEnvFile) {
+    process.loadEnvFile(path.join(__dirname, '..', '.env'));
+  }
+} catch {
+  // Continue if already loaded or file missing
+}
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -27,24 +37,34 @@ app.post('/api/contact', async (req, res) => {
 
   if (emailJsService && emailJsTemplate && emailJsKey) {
     try {
+      const clientOrigin = req.headers.origin || req.headers.referer || (req.headers.host ? `https://${req.headers.host}` : 'http://localhost:5173');
+      const payload = {
+        service_id: emailJsService,
+        template_id: emailJsTemplate,
+        user_id: emailJsKey,
+        template_params: {
+          name: name.trim(),
+          from_name: name.trim(),
+          email: email.trim(),
+          from_email: email.trim(),
+          reply_to: email.trim(),
+          message: message.trim(),
+          to_name: 'Ashish Kumar Singh',
+          to_email: process.env.CONTACT_TO || 'mailto.ashishsingh01@gmail.com',
+        },
+      };
+
+      if (process.env.EMAILJS_PRIVATE_KEY) {
+        payload.accessToken = process.env.EMAILJS_PRIVATE_KEY;
+      }
+
       const emailJsRes = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          service_id: emailJsService,
-          template_id: emailJsTemplate,
-          user_id: emailJsKey,
-          template_params: {
-            name: name.trim(),
-            from_name: name.trim(),
-            email: email.trim(),
-            from_email: email.trim(),
-            reply_to: email.trim(),
-            message: message.trim(),
-            to_name: 'Ashish Kumar Singh',
-            to_email: process.env.CONTACT_TO || 'mailto.ashishsingh01@gmail.com',
-          },
-        }),
+        headers: {
+          'Content-Type': 'application/json',
+          'Origin': clientOrigin,
+        },
+        body: JSON.stringify(payload),
       });
 
       if (emailJsRes.ok) {

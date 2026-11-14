@@ -28,24 +28,34 @@ export default async function handler(req, res) {
   // 1. Try EmailJS server-side if configured
   if (emailJsService && emailJsTemplate && emailJsKey) {
     try {
+      const clientOrigin = req.headers.origin || req.headers.referer || (req.headers.host ? `https://${req.headers.host}` : 'http://localhost:5173');
+      const payload = {
+        service_id: emailJsService,
+        template_id: emailJsTemplate,
+        user_id: emailJsKey,
+        template_params: {
+          name: name.trim(),
+          from_name: name.trim(),
+          email: email.trim(),
+          from_email: email.trim(),
+          reply_to: email.trim(),
+          message: message.trim(),
+          to_name: 'Ashish Kumar Singh',
+          to_email: process.env.CONTACT_TO || 'mailto.ashishsingh01@gmail.com',
+        },
+      };
+
+      if (process.env.EMAILJS_PRIVATE_KEY) {
+        payload.accessToken = process.env.EMAILJS_PRIVATE_KEY;
+      }
+
       const emailJsRes = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          service_id: emailJsService,
-          template_id: emailJsTemplate,
-          user_id: emailJsKey,
-          template_params: {
-            name: name.trim(),
-            from_name: name.trim(),
-            email: email.trim(),
-            from_email: email.trim(),
-            reply_to: email.trim(),
-            message: message.trim(),
-            to_name: 'Ashish Kumar Singh',
-            to_email: process.env.CONTACT_TO || 'mailto.ashishsingh01@gmail.com',
-          },
-        }),
+        headers: {
+          'Content-Type': 'application/json',
+          'Origin': clientOrigin,
+        },
+        body: JSON.stringify(payload),
       });
 
       if (emailJsRes.ok) {

@@ -70,7 +70,11 @@ export default function Contact() {
         setFormData({ name: '', email: '', message: '' });
         return;
       }
-      throw new Error(result.message || 'The website email service is not available.');
+      if (result.message) {
+        setStatus({ type: 'error', message: result.message });
+        return;
+      }
+      throw new Error('The website email service is not available.');
     } catch {
       // 3. Graceful fallback: Open default email application prefilled
       setStatus({
