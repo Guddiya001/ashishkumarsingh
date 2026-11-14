@@ -7,7 +7,7 @@ import Experience from './Experience';
 import Contact from './Contact';
 import Footer from './Footer';
 
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Hero />
@@ -19,6 +19,4 @@ const Home = () => {
       <Footer />
     </>
   );
-};
-
-export default Home;
+}

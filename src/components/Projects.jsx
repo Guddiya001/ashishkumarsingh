@@ -1,44 +1,36 @@
-import { useTranslation } from 'react-i18next';
+import React from 'react';
+import { projects } from '../data/projects';
 
 export default function Projects() {
-  const { t } = useTranslation();
-
-  const projects = [
-    {
-      title: t('projects.item1.title'),
-      description: t('projects.item1.description'),
-      impact: t('projects.item1.impact'),
-      tech: t('projects.item1.tech')
-    },
-    {
-      title: t('projects.item2.title'),
-      description: t('projects.item2.description'),
-      impact: t('projects.item2.impact'),
-      tech: t('projects.item2.tech')
-    },
-    {
-      title: t('projects.item3.title'),
-      description: t('projects.item3.description'),
-      impact: t('projects.item3.impact'),
-      tech: t('projects.item3.tech')
-    }
-  ];
-
   return (
-    <section id="projects">
-      <h2>{t('projects.title')}</h2>
-
-      <div className="project-grid">
-        {projects.map((p, i) => (
-          <div key={i} className="project-card">
-            <h3>{p.title}</h3>
-            <p>{p.description}</p>
-            <strong>{p.impact}</strong>
-            <span>{p.tech}</span>
+    <section className="section projects-section" id="projects">
+      <div className="page-container">
+        <div className="section-heading projects-heading">
+          <div>
+            <p className="eyebrow">SELECTED WORK</p>
+            <h2>Projects built to<br /><span>solve real problems.</span></h2>
           </div>
-        ))}
+          <a className="text-link" href="https://github.com/Guddiya001" target="_blank" rel="noreferrer">View all GitHub repositories <span>↗</span></a>
+        </div>
+        <div className="project-grid">
+          {projects.map((project, index) => (
+            <article className={`project-card ${project.featured ? 'project-card-featured' : ''}`} key={project.title}>
+              <div className="project-card-head">
+                <span className="project-index">0{index + 1}</span>
+                <span className="project-label">{project.label}</span>
+              </div>
+              <p className="project-category">{project.category}</p>
+              <h3>{project.title}</h3>
+              <p className="project-description">{project.description}</p>
+              <div className="project-tech">{project.tech.map((item) => <span key={item}>{item}</span>)}</div>
+              <div className="project-links">
+                <a href={project.github} target="_blank" rel="noreferrer">GitHub repository <span>↗</span></a>
+                {project.demo && <a href={project.demo} target="_blank" rel="noreferrer">Live demo <span>↗</span></a>}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-

@@ -1,24 +1,17 @@
-import { footer } from 'framer-motion/client';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
-const Footer = () => {
-  const { t } = useTranslation();
+export default function Footer() {
   return (
-    <footer>
-      <div className="footer-content">
-        <div className="contact-info">
-          <p><strong>{t('footer.visaText')}</strong></p>
+    <footer className="site-footer">
+      <div className="page-container footer-inner">
+        <div><strong>Ashish Kumar Singh</strong><span>Senior Software Engineer · Production AI Engineer</span></div>
+        <div className="footer-links">
+          <a href="https://github.com/Guddiya001" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/ashish-kumar-singh1986/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="#home">Back to top ↑</a>
         </div>
-        <div className="social-links">
-          <a href="https://linkedin.com/in/ashish-kumar-singh1986" target="_blank" rel="noopener noreferrer">{t('footer.email')}</a> &nbsp;|&nbsp;
-          <a href="https://github.com/guddiya001" target="_blank" rel="noopener noreferrer">{t('footer.github')}</a> &nbsp;|&nbsp;
-          <a href="https://linkedin.com/in/ashish-kumar-singh1986" target="_blank" rel="noopener noreferrer">{t('footer.linkedin')}</a>
-        </div>
+        <p>© {new Date().getFullYear()} Ashish Kumar Singh. Built with React.</p>
       </div>
-      <p>{t('footer.copyright')}</p>
     </footer>
   );
-};
-
-export default Footer;
+}

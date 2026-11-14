@@ -6,50 +6,44 @@ const nodemailer = require('nodemailer');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '20kb' }));
 
-// Email transporter
-const transporter = nodemailer.createTransporter({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
-
-// Routes
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (_req, res) => {
   res.json({ status: 'OK', message: 'Backend is running' });
 });
 
 app.post('/api/contact', async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, message } = req.body || {};
+  if (![name, email, message].every((value) => typeof value === 'string' && value.trim())) {
+    return res.status(400).json({ success: false, message: 'Name, email and message are required.' });
+  }
+  if (name.length > 120 || email.length > 254 || message.length > 5000) {
+    return res.status(400).json({ success: false, message: 'Your message is too long.' });
+  }
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    return res.status(503).json({ success: false, message: 'Email is not configured. Please contact through LinkedIn.' });
+  }
 
   try {
-    const mailOptions = {
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
+    });
+    await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: 'mailto.ashishsingh01@gmail.com', // Your email
-      subject: `Portfolio Contact Form - Message from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-      html: `<h3>New Contact Form Submission</h3>
-             <p><strong>Name:</strong> ${name}</p>
-             <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Message:</strong></p>
-             <p>${message.replace(/\n/g, '<br>')}</p>`
-    };
-
-    await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully');
-    res.json({ success: true, message: 'Message sent successfully' });
+      to: process.env.CONTACT_TO || 'mailto.ashishsingh01@gmail.com',
+      replyTo: email.trim(),
+      subject: `Portfolio contact from ${name.trim()}`,
+      text: `Name: ${name.trim()}\nEmail: ${email.trim()}\n\nMessage:\n${message.trim()}`,
+    });
+    return res.json({ success: true, message: 'Message sent successfully.' });
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ success: false, message: 'Failed to send message' });
+    console.error('Contact email failed:', error);
+    return res.status(500).json({ success: false, message: 'Unable to send the message right now.' });
   }
 });
 
-// Start server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Portfolio backend listening on port ${PORT}`);
 });
